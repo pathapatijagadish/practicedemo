@@ -15,7 +15,7 @@
                 <div class="info-block">
                   <h5><%= project.name.to_s.camelcase %></h5>
                 </div>
-              <%= link_to "#{ image_tag  project.id.to_s + '.png', :alt => 'click here' }".html_safe, edit_project_path(project),:class=>"" %>
+              <%= link_to (image_tag asset_path("screenshot.png")), edit_project_path(project) %>
             </div>
             
 

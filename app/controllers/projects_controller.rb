@@ -34,9 +34,7 @@ class ProjectsController < ApplicationController
         kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project}))#it takes html and any options for wkhtmltoimage
         kit.stylesheets << '/home/intel-ithub/Desktop/ROR/practice/app/assets/stylesheets/ImgKit.css' #its apply the give css to the converted image 
         t = kit.to_img(:png) # convert image to specific format
-        file_path = '/home/intel-ithub/Desktop/ROR/practice/app/assets/images/' + @project.id.to_s+ ".png" #storing path of converted file
-        file = kit.to_file(file_path)
-        #render :text =>t and return false
+        file = kit.to_file(Rails.root + "public/assets/" + "screenshot.png")#storing path of converted file
         format.html { redirect_to root_url, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -54,7 +52,8 @@ class ProjectsController < ApplicationController
         kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project})) #it takes html and any options for wkhtmltoimage
         kit.stylesheets << '/home/intel-ithub/Desktop/ROR/practice/app/assets/stylesheets/ImgKit.css' #its apply the give css to the converted image 
         t = kit.to_img(:png) # convert image to specific format
-        file_path = '/home/intel-ithub/Desktop/ROR/practice/app/assets/images/' + @project.id.to_s+ ".png" #storing path of converted file
+        file = kit.to_file(Rails.root + "public/assets/" + "screenshot.png")#storing path of converted file
+
         file = kit.to_file(file_path)
         #render :text =>kit and return false
         format.html { redirect_to root_url, notice: 'Project was successfully updated.' }

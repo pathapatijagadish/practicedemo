@@ -34,8 +34,9 @@ class ProjectsController < ApplicationController
         kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project}))#it takes html and any options for wkhtmltoimage
         kit.stylesheets << "#{Rails.root.to_s}/app/assets/stylesheets/ImgKit.css" #its apply the give css to the converted image 
         t = kit.to_img(:png) # convert image to specific format
-        file = kit.to_file(Rails.root + "public/assets/" + "screenshot.png")#storing path of converted file
-        format.html { redirect_to root_url, notice: 'Project was successfully created.' }
+        file_path='/home/intel-ithub/Desktop/ROR/practice/public/assets/images/' + @project.id.to_s+ ".png"
+        file = kit.to_file(file_path)#storing path of converted file
+        format.html { redirect_to root_url, notice: 'Flyer was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -54,7 +55,7 @@ class ProjectsController < ApplicationController
         t = kit.to_img(:png) # convert image to specific format
         file = kit.to_file(Rails.root + "public/assets/" + "screenshot.png")#storing path of converted file
         #render :text =>kit and return false
-        format.html { redirect_to root_url, notice: 'Project was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Flyer was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -68,7 +69,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_url, notice: 'Flyer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

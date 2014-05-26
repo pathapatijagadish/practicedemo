@@ -26,7 +26,6 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   # POST /projects.json
-
   def create
     @project = Project.new(project_params)
 
@@ -36,7 +35,7 @@ class ProjectsController < ApplicationController
         kit.stylesheets << "#{Rails.root.to_s}/app/assets/stylesheets/ImgKit.css" #its apply the give css to the converted image 
         t = kit.to_img(:png) # convert image to specific format
         file = kit.to_file(Rails.root + "public/assets/" + "screenshot.png")#storing path of converted file
-        format.html { redirect_to root_url, notice: 'Project was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Flyer was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -44,6 +43,7 @@ class ProjectsController < ApplicationController
       end
     end
   end
+
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update

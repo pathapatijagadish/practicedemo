@@ -1,0 +1,538 @@
+  [1m[36m (91.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (216.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateProjects (20140524092236)
+  [1m[35m (79.2ms)[0m  CREATE TABLE `projects` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140524092236')
+  [1m[36m (38.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20140524092400)
+  [1m[35m (81.7ms)[0m  CREATE TABLE `questions` (`id` int(11) auto_increment PRIMARY KEY, `project_id` int(11), `subject` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140524092400')
+  [1m[36m (39.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-26 11:16:22 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects`
+  Rendered projects/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 2774ms (Views: 2706.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/ImgKit.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/index_page.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:26 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/tinymce/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+
+Started GET "/assets/body-bg6.jpg" for 127.0.0.1 at 2014-05-26 11:16:27 +0530
+
+ActionController::RoutingError (No route matches [GET] "/assets/body-bg6.jpg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (72.9ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (105.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+Processing by ProjectsController#new as HTML
+  Rendered projects/_question_fields.html.erb (5.3ms)
+  Rendered projects/_question_fields.html.erb (1.5ms)
+  Rendered projects/_form.html.erb (30.5ms)
+  Rendered projects/new.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 286ms (Views: 134.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+
+
+Started GET "/assets/tinymce/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+
+
+Started GET "/assets/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+
+
+Started GET "/assets/body-bg12.jpg" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for 127.0.0.1 at 2014-05-26 11:16:33 +0530
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for 127.0.0.1 at 2014-05-26 11:16:34 +0530
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for 127.0.0.1 at 2014-05-26 11:16:34 +0530
+
+
+Started POST "/projects" for 127.0.0.1 at 2014-05-26 11:16:47 +0530
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NkZ3ihZSL9aOZQ5HeVxRYBbwqO44Vt2H3PPCFRUQtxw=", "project"=>{"name"=>"project ", "description"=>"<p>this is sample project</p>", "questions_attributes"=>{"0"=>{"subject"=>"", "content"=>"", "_destroy"=>"false"}}}, "commit"=>"Add Flyer"}
+Unpermitted parameters: questions_attributes
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `projects` (`created_at`, `description`, `name`, `updated_at`) VALUES ('2014-05-26 05:46:47', '<p>this is sample project</p>', 'project ', '2014-05-26 05:46:47')
+  [1m[36m (93.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 100ms (ActiveRecord: 94.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.9ms)[0m  SELECT `projects`.* FROM `projects`
+  Rendered projects/index.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 148ms (Views: 146.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/ImgKit.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/tinymce/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/images/1.png" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+ActionController::RoutingError (No route matches [GET] "/images/1.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (97.7ms)
+
+
+Started GET "/assets/body-bg6.jpg" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+ActionController::RoutingError (No route matches [GET] "/assets/body-bg6.jpg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.1ms)
+
+
+Started GET "/assets/body-bg3.jpg" for 127.0.0.1 at 2014-05-26 11:16:48 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-26 11:17:22 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+  Rendered projects/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 129ms (Views: 127.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/ImgKit.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/index_page.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/tinymce/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/tinymce.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+
+Started GET "/images/1.png" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+ActionController::RoutingError (No route matches [GET] "/images/1.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.8ms)
+
+
+Started GET "/assets/body-bg6.jpg" for 127.0.0.1 at 2014-05-26 11:17:23 +0530
+
+ActionController::RoutingError (No route matches [GET] "/assets/body-bg6.jpg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/intel-ithub/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/intel-ithub/.rvm/gems/ruby-1.9.3-p545@rails41/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.2ms)
+
+
+Started GET "/assets/body-bg3.jpg" for 127.0.0.1 at 2014-05-26 11:17:23 +0530

@@ -31,12 +31,12 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project})) #it takes html and any options for wkhtmltoimage
+        kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project}))#it takes html and any options for wkhtmltoimage
         kit.stylesheets << '/home/intel-ithub/Desktop/ROR/practice/app/assets/stylesheets/ImgKit.css' #its apply the give css to the converted image 
         t = kit.to_img(:png) # convert image to specific format
         file_path = '/home/intel-ithub/Desktop/ROR/practice/app/assets/images/' + @project.id.to_s+ ".png" #storing path of converted file
         file = kit.to_file(file_path)
-        #render :text =>kit and return false
+        #render :text =>t and return false
         format.html { redirect_to root_url, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -51,6 +51,12 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
+        kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project})) #it takes html and any options for wkhtmltoimage
+        kit.stylesheets << '/home/intel-ithub/Desktop/ROR/practice/app/assets/stylesheets/ImgKit.css' #its apply the give css to the converted image 
+        t = kit.to_img(:png) # convert image to specific format
+        file_path = '/home/intel-ithub/Desktop/ROR/practice/app/assets/images/' + @project.id.to_s+ ".png" #storing path of converted file
+        file = kit.to_file(file_path)
+        #render :text =>kit and return false
         format.html { redirect_to root_url, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else

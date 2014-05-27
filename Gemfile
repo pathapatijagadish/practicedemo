@@ -14,6 +14,7 @@ gem 'imgkit'
 gem 'rmagick', '2.13.2'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+
 # Use CoffeeScript for .js.coffee assets and views
 #gem 'coffee-rails', '~> 4.0.0'
 gem 'pg', group: :production

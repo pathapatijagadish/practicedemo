@@ -18294,3 +18294,41 @@ Started GET "/assets/tinymce/skins/lightgray/content.min.css" for 127.0.0.1 at 2
 
 
 Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for 127.0.0.1 at 2014-05-28 11:45:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddAvatarColumnToProjects (20140528063259)
+  [1m[35m (76.4ms)[0m  ALTER TABLE `projects` ADD `avatar_file_name` varchar(255)
+Mysql2::Error: Duplicate column name 'avatar_file_name': ALTER TABLE `projects` ADD `avatar_file_name` varchar(255)
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT `questions`.* FROM `questions`  WHERE `questions`.`project_id` = 71
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `questions` WHERE `questions`.`id` = 5[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 71
+  [1m[36m (53.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions`  WHERE `questions`.`project_id` = 72
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `projects` WHERE `projects`.`id` = 72[0m
+  [1m[35m (40.8ms)[0m  COMMIT
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions`  WHERE `questions`.`project_id` = 73[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 73
+  [1m[36m (42.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT `questions`.* FROM `questions`  WHERE `questions`.`project_id` = 74
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `projects` WHERE `projects`.`id` = 74[0m
+  [1m[35m (42.3ms)[0m  COMMIT
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions`  WHERE `questions`.`project_id` = 75[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `questions` WHERE `questions`.`id` = 6
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `questions` WHERE `questions`.`id` = 7[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `projects` WHERE `projects`.`id` = 75
+  [1m[36m (52.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mProject Load (0.9ms)[0m  SELECT  `projects`.* FROM `projects`   ORDER BY `projects`.`id` ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`

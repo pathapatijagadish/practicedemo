@@ -15,7 +15,8 @@
                 <div class="info-block">
                   <h5><%= project.name.to_s.camelcase %></h5>
                 </div>
-                <%= link_to (image_tag asset_path("/assets/screenshot.png")), edit_project_path(project) %>
+                <%=link_to image_tag(project.avatar.url(:medium)), edit_project_path(project) %>
+                <%#= link_to (image_tag asset_path("/assets/screenshot.png")), edit_project_path(project) %>
             </div>
             
 

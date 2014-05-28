@@ -31,12 +31,22 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        #render :text=>params and return false
         kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project}))#it takes html and any options for wkhtmltoimage
         kit.stylesheets << "#{Rails.root.to_s}/app/assets/stylesheets/ImgKit.css" #its apply the give css to the converted image 
-        t = kit.to_img(:png) # convert image to specific format
-        file = kit.to_file(Rails.root + "app/assets/images" + "screenshot.png")#storing path of converted file
+        img   = kit.to_img(:png)
+        file  = Tempfile.new(["template_#{@project.id}", 'png'], 'tmp',
+                             :encoding => 'ascii-8bit')
+        file.write(img)
+        file.flush
+        @project.avatar = file
+        @project.save
+        #render :text=>@project.save and return false
+        file.unlink
+        
         format.html { redirect_to root_url, notice: 'Flyer was successfully created.' }
         format.json { render :show, status: :created, location: @project }
+
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -49,11 +59,17 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project})) #it takes html and any options for wkhtmltoimage
+        kit = IMGKit.new(render_to_string(:partial => 'form', :layout => false,:locals => {:project => @project}))#it takes html and any options for wkhtmltoimage
         kit.stylesheets << "#{Rails.root.to_s}/app/assets/stylesheets/ImgKit.css" #its apply the give css to the converted image 
-        t = kit.to_img(:png) # convert image to specific format
-        file = kit.to_file(Rails.root + "app/assets/images" + "screenshot.png")#storing path of converted file
-        #render :text =>kit and return false
+        img   = kit.to_img(:png)
+        file  = Tempfile.new(["template_#{@project.id}", 'png'], 'tmp',
+                             :encoding => 'ascii-8bit')
+        file.write(img)
+        file.flush
+        @project.avatar = file
+        @project.save
+        #render :text=>@project.save and return false
+        file.unlink
         format.html { redirect_to root_url, notice: 'Flyer was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else

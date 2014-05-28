@@ -16,7 +16,7 @@
 #   username: root
 #   password: root
 #   socket: /var/run/mysqld/mysqld.sock
-
+  
 
 default: &default
   adapter: postgresql
